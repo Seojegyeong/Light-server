@@ -5,6 +5,14 @@ const router = Router(); // 라우터 인스턴스 생성
 
 // POST /api/extract 요청 처리
 router.post('/', async (req, res) => {
+  // 요청 헤더에서 사용자 API 키 추출
+  const apiKey = req.headers['x-api-key'];
+
+  // API 키 없으면 401 에러 반환
+  if (!apiKey) {
+    return res.status(401).json({ error: 'API 키가 필요합니다. x-api-key 헤더를 확인해주세요.' });
+  }
+
   const { text } = req.body; // 요청 body에서 text 추출
 
   // text가 없거나 문자열이 아니면 400 에러 반환
@@ -12,8 +20,8 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'text 필드가 필요합니다.' });
   }
 
-  const terms = await extractTerms(text); // Claude API로 금융 용어 추출
-  res.json({ terms });                    // 결과 반환
+  const terms = await extractTerms(text, apiKey); // 사용자 API 키를 함께 전달
+  res.json({ terms });
 });
 
 export default router;
