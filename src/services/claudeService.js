@@ -1,11 +1,12 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { findTerm } from './termService.js';
 
-// .env의 API 키로 Claude 클라이언트 초기화
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+// 뉴스 기사 텍스트와 사용자 API 키를 받아 금융 용어 + 설명 배열을 반환하는 함수
+// 고정 클라이언트 제거 — 매 요청마다 사용자 키로 클라이언트 초기화
+export async function extractTerms(text, apiKey) {
+  // 전달받은 사용자 API 키로 Claude 클라이언트 초기화
+  const client = new Anthropic({ apiKey });
 
-// 뉴스 기사 텍스트를 받아 금융 용어 + 설명 배열을 반환하는 함수
-export async function extractTerms(text) {
   // 1단계: Claude가 기사에서 금융 용어 이름만 추출
   // 설명은 이 단계에서 생성하지 않음 — terms.json 우선 사용하기 때문
   const extractMessage = await client.messages.create({
@@ -43,7 +44,7 @@ ${text}`,
       }
 
       // terms.json에 없는 용어 → Claude API로 설명 생성
-      // 이 경우에만 추가 API 호출 발생 (비용 최소화)
+      // 이 경우에만 추가 API 호출 발생 (사용자 비용 최소화)
       const descMessage = await client.messages.create({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 256,
