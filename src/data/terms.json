@@ -1,0 +1,434 @@
+[
+  {
+    "id": "stock-001",
+    "name": "PER",
+    "category": "주식",
+    "description": "주가를 주당순이익(EPS)으로 나눈 지표. 주식의 가격 수준을 가늠하는 대표적 밸류에이션 배수.",
+    "aliases": ["주가수익비율", "p/e", "pe"],
+    "example": "삼성전자의 PER이 15배로 업종 평균보다 낮게 거래되고 있다."
+  },
+  {
+    "id": "stock-002",
+    "name": "PBR",
+    "category": "주식",
+    "description": "주가를 주당순자산(BPS)으로 나눈 지표. 1 미만이면 청산가치 이하로 평가된 것.",
+    "aliases": ["주가순자산비율", "p/b"],
+    "example": "코스피 평균 PBR이 0.9배로 청산가치 이하 수준에 머물고 있다."
+  },
+  {
+    "id": "stock-003",
+    "name": "EPS",
+    "category": "주식",
+    "description": "당기순이익을 발행주식 수로 나눈 주당순이익.",
+    "aliases": ["주당순이익"],
+    "example": "2분기 EPS가 전년 동기 대비 12% 증가했다."
+  },
+  {
+    "id": "stock-004",
+    "name": "ROE",
+    "category": "주식",
+    "description": "순이익을 자기자본으로 나눈 자기자본이익률. 주주가 투자한 자본 대비 수익성을 나타냄.",
+    "aliases": ["자기자본이익률"],
+    "example": "ROE 20%를 달성하며 업계 최고 수준의 수익성을 기록했다."
+  },
+  {
+    "id": "stock-005",
+    "name": "ROA",
+    "category": "주식",
+    "description": "순이익을 총자산으로 나눈 총자산이익률.",
+    "aliases": ["총자산이익률"],
+    "example": "은행의 ROA가 0.5%로 전년 대비 개선됐다."
+  },
+  {
+    "id": "stock-006",
+    "name": "BPS",
+    "category": "주식",
+    "description": "총자산에서 총부채를 뺀 순자산을 발행주식 수로 나눈 주당순자산.",
+    "aliases": ["주당순자산"],
+    "example": "BPS 대비 주가가 1.2배 수준에서 거래되고 있다."
+  },
+  {
+    "id": "stock-007",
+    "name": "시가총액",
+    "category": "주식",
+    "description": "주가에 상장 주식 수를 곱한 값. 기업의 시장가치를 나타냄.",
+    "aliases": ["시총", "market cap", "marketcap"],
+    "example": "삼성전자의 시가총액이 400조 원을 돌파했다."
+  },
+  {
+    "id": "stock-008",
+    "name": "배당수익률",
+    "category": "주식",
+    "description": "주당배당금을 주가로 나눈 비율.",
+    "aliases": ["배당률", "dividend yield"],
+    "example": "배당수익률 4%를 기록하며 고배당주로 주목받고 있다."
+  },
+  {
+    "id": "stock-009",
+    "name": "공매도",
+    "category": "주식",
+    "description": "보유하지 않은 주식을 빌려 매도하는 투자 기법. 주가 하락을 예상할 때 사용.",
+    "aliases": ["short selling", "short"],
+    "example": "공매도 잔고가 급증하며 주가 하락 압력이 커지고 있다."
+  },
+  {
+    "id": "stock-010",
+    "name": "상한가",
+    "category": "주식",
+    "description": "하루 동안 주가가 오를 수 있는 최대 한도(한국 30%)에 도달한 상태.",
+    "aliases": ["upper limit"],
+    "example": "호재 발표 직후 해당 종목은 상한가를 기록했다."
+  },
+  {
+    "id": "stock-011",
+    "name": "하한가",
+    "category": "주식",
+    "description": "하루 동안 주가가 내릴 수 있는 최대 한도(한국 −30%)에 도달한 상태.",
+    "aliases": ["lower limit"],
+    "example": "어닝쇼크 발표 다음 날 해당 종목은 하한가로 직행했다."
+  },
+  {
+    "id": "stock-012",
+    "name": "거래량",
+    "category": "주식",
+    "description": "특정 기간 동안 거래된 주식 수.",
+    "aliases": ["volume", "trading volume"],
+    "example": "평소의 10배에 달하는 거래량이 쏟아지며 시장의 관심이 집중됐다."
+  },
+  {
+    "id": "bond-001",
+    "name": "국채",
+    "category": "채권",
+    "description": "중앙정부가 발행하는 채권. 신용등급이 높아 안전 자산으로 분류.",
+    "aliases": ["government bond", "treasury bond"],
+    "example": "10년물 국채 금리가 연 4%를 돌파했다."
+  },
+  {
+    "id": "bond-002",
+    "name": "회사채",
+    "category": "채권",
+    "description": "기업이 자금 조달을 위해 발행하는 채권.",
+    "aliases": ["corporate bond"],
+    "example": "신용등급 A급 회사채 발행이 올해 크게 증가했다."
+  },
+  {
+    "id": "bond-003",
+    "name": "채권수익률",
+    "category": "채권",
+    "description": "채권을 만기까지 보유할 때 얻는 연간 수익률(YTM).",
+    "aliases": ["yield", "ytm", "만기수익률"],
+    "example": "채권수익률이 상승하면 채권 가격은 하락한다."
+  },
+  {
+    "id": "bond-004",
+    "name": "듀레이션",
+    "category": "채권",
+    "description": "채권 현금흐름의 가중평균 만기. 금리 변동에 대한 채권 가격 민감도를 나타냄.",
+    "aliases": ["duration"],
+    "example": "듀레이션이 길수록 금리 변동에 따른 채권 가격 변동이 크다."
+  },
+  {
+    "id": "bond-005",
+    "name": "신용등급",
+    "category": "채권",
+    "description": "채무자의 채무 이행 능력을 평가한 등급.",
+    "aliases": ["credit rating", "rating"],
+    "example": "무디스가 해당 기업의 신용등급을 BBB로 하향 조정했다."
+  },
+  {
+    "id": "bond-006",
+    "name": "액면가",
+    "category": "채권",
+    "description": "채권 발행 시 표시되는 기준 금액. 만기 시 상환되는 금액.",
+    "aliases": ["face value", "par value", "par"],
+    "example": "주식 액면가가 5,000원에서 500원으로 분할됐다."
+  },
+  {
+    "id": "bond-007",
+    "name": "쿠폰금리",
+    "category": "채권",
+    "description": "채권의 액면가에 대해 지급하는 연간 이자율.",
+    "aliases": ["coupon rate", "coupon"],
+    "example": "연 3% 쿠폰금리의 5년 만기 회사채를 발행했다."
+  },
+  {
+    "id": "bond-008",
+    "name": "역전된 수익률 곡선",
+    "category": "채권",
+    "description": "단기 금리가 장기 금리보다 높아지는 현상. 경기 침체의 선행 신호로 여겨짐.",
+    "aliases": ["inverted yield curve", "yield curve inversion"],
+    "example": "미국 2년-10년 국채 수익률 곡선이 역전되며 경기침체 우려가 높아졌다."
+  },
+  {
+    "id": "macro-001",
+    "name": "GDP",
+    "category": "거시경제",
+    "description": "일정 기간 한 나라 안에서 생산된 모든 재화·서비스의 시장 가치 합계.",
+    "aliases": ["국내총생산", "gross domestic product"],
+    "example": "지난해 GDP 성장률이 2.5%로 잠정 집계됐다."
+  },
+  {
+    "id": "macro-002",
+    "name": "기준금리",
+    "category": "거시경제",
+    "description": "중앙은행이 설정하는 정책 금리. 시중 금리의 기준이 됨.",
+    "aliases": ["base rate", "key rate", "정책금리"],
+    "example": "한국은행이 기준금리를 3.5%로 동결했다."
+  },
+  {
+    "id": "macro-003",
+    "name": "인플레이션",
+    "category": "거시경제",
+    "description": "물가 수준이 지속적으로 상승하는 현상.",
+    "aliases": ["inflation", "물가상승"],
+    "example": "소비자물가 상승률이 5%를 넘어서며 인플레이션 우려가 커지고 있다."
+  },
+  {
+    "id": "macro-004",
+    "name": "디플레이션",
+    "category": "거시경제",
+    "description": "물가 수준이 지속적으로 하락하는 현상.",
+    "aliases": ["deflation", "물가하락"],
+    "example": "물가가 3개월 연속 하락하며 디플레이션 진입 여부에 관심이 쏠린다."
+  },
+  {
+    "id": "macro-005",
+    "name": "CPI",
+    "category": "거시경제",
+    "description": "소비자가 구매하는 재화·서비스의 가격 변동을 측정하는 소비자물가지수.",
+    "aliases": ["소비자물가지수", "consumer price index"],
+    "example": "지난달 CPI가 전년 동월 대비 3.2% 상승했다."
+  },
+  {
+    "id": "macro-006",
+    "name": "PPI",
+    "category": "거시경제",
+    "description": "생산자가 판매하는 재화·서비스의 가격 변동을 측정하는 생산자물가지수.",
+    "aliases": ["생산자물가지수", "producer price index"],
+    "example": "PPI 상승세가 둔화되며 향후 소비자물가 안정화 기대감이 커졌다."
+  },
+  {
+    "id": "macro-007",
+    "name": "환율",
+    "category": "거시경제",
+    "description": "자국 통화 한 단위와 교환되는 외국 통화의 양.",
+    "aliases": ["exchange rate"],
+    "example": "원달러 환율이 1,400원을 돌파하며 수입 물가 상승 우려가 높아졌다."
+  },
+  {
+    "id": "macro-008",
+    "name": "경상수지",
+    "category": "거시경제",
+    "description": "상품·서비스 수출입, 소득, 이전 거래를 포함한 국제 거래 수지.",
+    "aliases": ["current account"],
+    "example": "경상수지가 3개월 연속 흑자를 기록했다."
+  },
+  {
+    "id": "macro-009",
+    "name": "베이시스포인트",
+    "category": "거시경제",
+    "description": "금리나 수익률 변화를 나타내는 단위. 1bp = 0.01%p.",
+    "aliases": ["bp", "bps", "basis point", "basis points"],
+    "example": "한국은행이 기준금리를 25bp 인하했다."
+  },
+  {
+    "id": "macro-010",
+    "name": "양적완화",
+    "category": "거시경제",
+    "description": "중앙은행이 채권 등을 매입해 시중에 유동성을 공급하는 비전통적 통화정책.",
+    "aliases": ["QE", "quantitative easing"],
+    "example": "연준이 양적완화 프로그램을 통해 시장에 유동성을 공급했다."
+  },
+  {
+    "id": "deriv-001",
+    "name": "선물",
+    "category": "파생상품",
+    "description": "미래 특정 시점에 사전에 정한 가격으로 자산을 사고팔기로 약정한 계약.",
+    "aliases": ["futures"],
+    "example": "코스피200 선물 가격이 현물보다 높은 콘탱고 상태다."
+  },
+  {
+    "id": "deriv-002",
+    "name": "콜옵션",
+    "category": "파생상품",
+    "description": "특정 가격(행사가)에 자산을 매수할 수 있는 권리.",
+    "aliases": ["call option", "call"],
+    "example": "주가 상승을 예상하고 콜옵션을 매수했다."
+  },
+  {
+    "id": "deriv-003",
+    "name": "풋옵션",
+    "category": "파생상품",
+    "description": "특정 가격(행사가)에 자산을 매도할 수 있는 권리.",
+    "aliases": ["put option", "put"],
+    "example": "시장 하락을 대비해 풋옵션을 매입했다."
+  },
+  {
+    "id": "deriv-004",
+    "name": "스왑",
+    "category": "파생상품",
+    "description": "두 당사자가 미래 현금 흐름을 교환하기로 하는 계약.",
+    "aliases": ["swap"],
+    "example": "변동금리를 고정금리로 교환하는 금리스왑 계약을 체결했다."
+  },
+  {
+    "id": "deriv-005",
+    "name": "변동성",
+    "category": "파생상품",
+    "description": "자산 가격의 변동 폭을 나타내는 지표. 옵션 가격 산정의 핵심 변수.",
+    "aliases": ["volatility", "vol"],
+    "example": "VIX가 급등하며 시장 변동성이 크게 높아졌다."
+  },
+  {
+    "id": "deriv-006",
+    "name": "VIX",
+    "category": "파생상품",
+    "description": "S&P 500 옵션 가격에서 도출된 향후 30일 예상 변동성 지수. '공포지수'라고도 불림.",
+    "aliases": ["공포지수", "fear index"],
+    "example": "VIX가 30을 넘어서며 투자자들의 공포 심리가 극에 달했다."
+  },
+  {
+    "id": "deriv-007",
+    "name": "레버리지",
+    "category": "파생상품",
+    "description": "차입 자금을 이용해 실제 투자 금액 이상의 포지션을 취하는 것.",
+    "aliases": ["leverage"],
+    "example": "3배 레버리지 ETF를 활용해 수익률을 극대화했다."
+  },
+  {
+    "id": "deriv-008",
+    "name": "마진콜",
+    "category": "파생상품",
+    "description": "레버리지 포지션에서 손실이 커져 증거금을 추가로 납부해야 하는 상황.",
+    "aliases": ["margin call"],
+    "example": "주가 급락으로 마진콜이 발생해 강제 청산이 이루어졌다."
+  },
+  {
+    "id": "realty-001",
+    "name": "LTV",
+    "category": "부동산",
+    "description": "담보 가치 대비 대출 가능 금액의 비율.",
+    "aliases": ["주택담보대출비율", "loan to value"],
+    "example": "LTV 70% 규제로 집값의 30%는 자기 자금으로 마련해야 한다."
+  },
+  {
+    "id": "realty-002",
+    "name": "DSR",
+    "category": "부동산",
+    "description": "연간 총부채 원리금 상환액을 연소득으로 나눈 비율.",
+    "aliases": ["총부채원리금상환비율", "debt service ratio"],
+    "example": "DSR 40% 규제로 연소득 5천만 원인 경우 연간 원리금 상환액이 2천만 원을 넘길 수 없다."
+  },
+  {
+    "id": "realty-003",
+    "name": "DTI",
+    "category": "부동산",
+    "description": "연간 총부채 이자 상환액을 연소득으로 나눈 비율.",
+    "aliases": ["총부채상환비율"],
+    "example": "DTI 기준을 초과해 추가 대출이 제한됐다."
+  },
+  {
+    "id": "realty-004",
+    "name": "전세",
+    "category": "부동산",
+    "description": "임차인이 보증금을 맡기고 계약 기간 동안 무상으로 거주하는 한국 고유의 임대 방식.",
+    "aliases": ["jeonse", "전세계약"],
+    "example": "전세 보증금이 2년 만에 1억 원 올랐다."
+  },
+  {
+    "id": "realty-005",
+    "name": "청약",
+    "category": "부동산",
+    "description": "신규 분양 아파트 입주권을 신청하는 절차.",
+    "aliases": ["housing subscription"],
+    "example": "청약 경쟁률이 500대 1을 넘어서며 로또 청약으로 불렸다."
+  },
+  {
+    "id": "realty-006",
+    "name": "용적률",
+    "category": "부동산",
+    "description": "대지면적 대비 건물 연면적의 비율. 개발 밀도를 결정하는 핵심 규제.",
+    "aliases": ["floor area ratio", "far"],
+    "example": "용적률 250%를 적용해 최대 25층까지 건축할 수 있다."
+  },
+  {
+    "id": "realty-007",
+    "name": "재건축",
+    "category": "부동산",
+    "description": "노후 아파트·건물을 허물고 새로 짓는 정비 사업.",
+    "aliases": ["reconstruction"],
+    "example": "안전진단을 통과한 단지가 재건축 사업을 본격 추진한다."
+  },
+  {
+    "id": "realty-008",
+    "name": "분양가상한제",
+    "category": "부동산",
+    "description": "신규 분양 아파트의 분양 가격에 상한선을 두는 제도.",
+    "aliases": ["price ceiling", "분양가규제"],
+    "example": "분양가상한제 적용 지역에서는 시세보다 낮은 가격에 신규 분양이 이루어진다."
+  },
+  {
+    "id": "acct-001",
+    "name": "매출액",
+    "category": "회계",
+    "description": "기업이 주된 영업활동으로 벌어들인 총수입.",
+    "aliases": ["매출", "revenue", "sales"],
+    "example": "3분기 매출액이 전년 동기 대비 15% 성장했다."
+  },
+  {
+    "id": "acct-002",
+    "name": "영업이익",
+    "category": "회계",
+    "description": "매출에서 매출원가와 판관비를 뺀 이익.",
+    "aliases": ["operating income", "operating profit", "EBIT"],
+    "example": "원가 절감 노력으로 영업이익률이 10%를 회복했다."
+  },
+  {
+    "id": "acct-003",
+    "name": "순이익",
+    "category": "회계",
+    "description": "모든 비용과 세금을 제한 후 남은 최종 이익.",
+    "aliases": ["당기순이익", "net income", "net profit"],
+    "example": "일회성 비용 제외 시 순이익은 전년 대비 20% 증가했다."
+  },
+  {
+    "id": "acct-004",
+    "name": "EBITDA",
+    "category": "회계",
+    "description": "이자·세금·감가상각 전 이익. 기업의 순수 영업 현금 창출력을 나타냄.",
+    "aliases": [],
+    "example": "EBITDA 기준으로는 흑자를 유지하고 있다."
+  },
+  {
+    "id": "acct-005",
+    "name": "부채비율",
+    "category": "회계",
+    "description": "총부채를 자기자본으로 나눈 비율. 기업의 재무 건전성 지표.",
+    "aliases": ["debt ratio", "debt-to-equity", "d/e"],
+    "example": "부채비율 200%를 초과하며 재무 건전성 우려가 제기됐다."
+  },
+  {
+    "id": "acct-006",
+    "name": "유동비율",
+    "category": "회계",
+    "description": "유동자산을 유동부채로 나눈 비율. 단기 채무 상환 능력을 나타냄.",
+    "aliases": ["current ratio"],
+    "example": "유동비율이 150%로 단기 채무 이행 능력이 양호하다."
+  },
+  {
+    "id": "acct-007",
+    "name": "영업현금흐름",
+    "category": "회계",
+    "description": "영업활동에서 실제로 발생한 현금의 유입·유출.",
+    "aliases": ["operating cash flow", "OCF"],
+    "example": "영업현금흐름이 꾸준히 증가하며 현금 창출 능력을 입증했다."
+  },
+  {
+    "id": "acct-008",
+    "name": "자본잠식",
+    "category": "회계",
+    "description": "누적 손실이 자본금을 잠식한 상태. 완전 자본잠식 시 상장폐지 위기.",
+    "aliases": ["capital impairment", "capital erosion"],
+    "example": "누적 적자로 자본금이 잠식되어 상장폐지 심사 대상에 올랐다."
+  }
+]
