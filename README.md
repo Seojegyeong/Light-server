@@ -19,15 +19,9 @@ light-server는 light 크롬 확장 프로그램의 백엔드 API 서버입니�
 
 ## 🧩 How It Works
 
-```mermaid
-flowchart TD
-    A[뉴스 기사 텍스트] --> B[Claude: 금융 용어명 추출]
-    B --> C{terms.json 조회}
-    C -- 등록된 용어 --> D[기존 설명 · 예시 반환]
-    C -- 미등록 용어 --> E[Claude: 설명 · 예시 생성]
-    E --> F[AI 생성 결과 반환]
-    D & F --> G[terms 배열 응답]
-```
+<div align="center">
+<img width="200" height=auto src="https://github.com/user-attachments/assets/39385040-36cf-4e9e-b76a-3a843462bf9d" />
+</div>
 
 <br>
 
