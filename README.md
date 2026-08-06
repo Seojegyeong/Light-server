@@ -24,6 +24,8 @@ light-server는 light 크롬 확장 프로그램의 백엔드 API 서버입니�
 config:
   layout: elk
   theme: base
+  elk:
+    edgeRouting: ORTHOGONAL
   themeVariables:
     primaryColor: "#fbfcfd"
     primaryBorderColor: "#e6e8ea"
