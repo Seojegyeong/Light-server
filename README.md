@@ -63,16 +63,9 @@ light-server는 light 크롬 확장 프로그램의 백엔드 API 서버입니�
 
 ```bash
 npm install
-cp .env.example .env   # PORT 설정
 npm start              # 프로덕션
 npm run dev            # 개발 (파일 변경 감지)
 ```
-
-**환경변수**
-
-| 변수명 | 설명      |
-| ------ | --------- |
-| `PORT` | 서버 포트 |
 
 **배포**
 
