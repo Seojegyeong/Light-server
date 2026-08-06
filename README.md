@@ -19,9 +19,56 @@ light-server는 light 크롬 확장 프로그램의 백엔드 API 서버입니�
 
 ## 🧩 How It Works
 
-<div align="center">
-<img width="200" height=auto src="https://github.com/user-attachments/assets/39385040-36cf-4e9e-b76a-3a843462bf9d" />
-</div>
+```mermaid
+---
+config:
+  layout: elk
+  theme: base
+  themeVariables:
+    primaryColor: "#fbfcfd"
+    primaryBorderColor: "#e6e8ea"
+    fontFamily: "Pretendard, sans-serif"
+    clusterBkg: "#fbfcfd"
+    clusterBorder: "#d6d7da"
+---
+flowchart LR
+    subgraph FRONT["Chrome Extension (프론트)"]
+        direction TB
+        A([뉴스 기사 페이지]) --> B[scanner.ts\n텍스트 수집]
+        B --> C{API 키\nchrome.storage 확인}
+        C -->|키 없음 · 체험용| D[(terms.json\n로컬 용어 조회)]
+        C -->|키 있음 · 풀 기능| E[POST /api/extract]
+    end
+
+    subgraph BACK["light-server (백엔드 · Node.js/Express)"]
+        direction TB
+        F{x-api-key\n유효성 검사}
+        F -->|키 없음| G[401 Unauthorized]
+        F -->|키 있음| H[Claude API\n금융 용어 추출]
+        H --> I{terms.json\n등록 여부}
+        I -->|등록된 용어| J[기존 description\n+ example 반환]
+        I -->|미등록 용어| K[Claude API\n설명 + 예시 생성]
+        J & K --> L[응답 조합]
+    end
+
+    E --> F
+    L -->|terms 배열 반환| M([하이라이트 + 툴팁 표시])
+    D --> M
+
+    classDef request fill:#eff6ff,stroke:#7eb1f3,color:#004fa7
+    classDef decision fill:#e0f7f9,stroke:#00b5c5,color:#004fa7
+    classDef process fill:#c8e0ff,stroke:#7eb1f3,color:#004fa7
+    classDef success fill:#eff6ff,stroke:#1779e1,color:#004fa7
+    classDef error fill:#fff1f2,stroke:#f87171,color:#991b1b
+    classDef storage fill:#f5f0ff,stroke:#ab8be3,color:#4a1d96
+
+    class A,B,E request
+    class C,F,I decision
+    class H,J,K process
+    class L,M success
+    class G error
+    class D storage
+```
 
 <br>
 
