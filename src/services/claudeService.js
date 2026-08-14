@@ -41,9 +41,12 @@ ${text}`,
       if (existing) {
         // terms.json에 등록된 용어 → API 호출 없이 기존 설명 그대로 사용
         return {
+          id: existing.id,
           name: existing.name,
           description: existing.description,
           example: existing.example ?? null,
+          category: existing.category,
+          aliases: existing.aliases ?? [],
         };
       }
 
@@ -70,7 +73,7 @@ ${text}`,
         descMessage.content[0].text.trim().replace(/^```json\s*|\s*```$/g, ""),
       );
 
-      return { name, description: parsed.description, example: parsed.example };
+      return { name, description: parsed.description, example: parsed.example ?? null, aliases: [] };
     }),
   );
 
