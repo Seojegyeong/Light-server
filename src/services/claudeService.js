@@ -32,8 +32,8 @@ ${text}`,
   );
 
   // 2단계: 추출된 용어마다 설명 결정
-  // Promise.all — 여러 비동기 작업을 병렬로 실행해서 응답 속도 향상
-  const terms = await Promise.all(
+  // Promise.allSettled — 개별 호출이 실패해도 나머지 결과는 유지
+  const results = await Promise.allSettled(
     extractedNames.map(async (name) => {
       // terms.json에서 먼저 조회
       const existing = findTerm(name);
@@ -50,8 +50,6 @@ ${text}`,
         };
       }
 
-      // terms.json에 없는 용어 → Claude API로 설명 생성
-      // 이 경우에만 추가 API 호출 발생 (사용자 비용 최소화)
       // terms.json에 없는 용어 → Claude API로 설명 + 예시 문장 생성
       const descMessage = await client.messages.create({
         model: "claude-haiku-4-5-20251001",
@@ -77,5 +75,12 @@ ${text}`,
     }),
   );
 
-  return terms;
+  // 실패한 용어는 건너뛰고 성공한 것만 반환
+  results
+    .filter((r) => r.status === "rejected")
+    .forEach((r) => console.error("[extractTerms] 용어 처리 실패:", r.reason));
+
+  return results
+    .filter((r) => r.status === "fulfilled")
+    .map((r) => r.value);
 }
