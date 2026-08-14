@@ -20,8 +20,14 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'text 필드가 필요합니다.' });
   }
 
-  const terms = await extractTerms(text, apiKey); // 사용자 API 키를 함께 전달
-  res.json({ terms });
+  try {
+    const terms = await extractTerms(text, apiKey);
+    res.json({ terms });
+  } catch (err) {
+    const status = err.status ?? 500;
+    const message = err.message ?? '서버 오류가 발생했습니다.';
+    res.status(status).json({ error: message });
+  }
 });
 
 export default router;

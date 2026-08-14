@@ -73,7 +73,7 @@ ${text}`,
         descMessage.content[0].text.trim().replace(/^```json\s*|\s*```$/g, ""),
       );
 
-      return { name, description: parsed.description, example: parsed.example ?? null, aliases: [] };
+      return { id: null, name, description: parsed.description, example: parsed.example ?? null, category: null, aliases: [] };
     }),
   );
 
