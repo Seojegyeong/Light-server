@@ -1,6 +1,25 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { findTerm } from "./termService.js";
 
+function sanitize(text, maxLength) {
+  return text.replace(/[<>]/g, "").trim().slice(0, maxLength);
+}
+
+function buildUserMessage(name) {
+  return `<term>${sanitize(name, 30)}</term>`;
+}
+
+function parseTermResponse(text) {
+  try {
+    const parsed = JSON.parse(text.trim().replace(/^```json\s*|\s*```$/g, ""));
+    if (typeof parsed.description !== "string") return null;
+    if (parsed.description.toLowerCase() === "unknown") return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
 // 뉴스 기사 텍스트와 사용자 API 키를 받아 금융 용어 + 설명 배열을 반환하는 함수
 // 고정 클라이언트 제거 — 매 요청마다 사용자 키로 클라이언트 초기화
 export async function extractTerms(text, apiKey) {
